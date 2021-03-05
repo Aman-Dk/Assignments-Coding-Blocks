@@ -1,0 +1,30 @@
+body{
+    background-color:#073b4c;
+}
+.main{
+    
+    position: relative;
+    height: 90vh;
+ }
+ .child{
+     width: 400px;
+     border: 5px solid #e63946;
+     /* padding: 10px; */
+     position: absolute;
+     top: 50%;
+     left: 40%;    
+     text-align: center;
+     font-size: 30px;
+     font-weight:bolder;
+     background-color: black;
+     color:white;
+ }
+
+.child:hover{
+     transform: rotate(0.5turn);
+     color:  #023047;
+     background-color: #34a0a4;
+     transition: width 2s, height 4s; 
+     width: 500px;
+
+ }
