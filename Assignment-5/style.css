@@ -1,0 +1,12 @@
+body{
+    background-color:lightseagreen;
+    height: 230px;
+}
+img{
+    height: 150px;
+    width: 150px;
+    margin: auto 20px;
+}
+.tp div{
+    border-right:1px solid black;
+}
