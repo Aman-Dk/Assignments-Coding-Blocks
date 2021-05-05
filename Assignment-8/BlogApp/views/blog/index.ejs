@@ -1,0 +1,59 @@
+<%- include("../partials/header") %> 
+<%- include("../partials/navbar") %> 
+
+<!-- Blog Posts -->
+<main class="container blogpost different mt-5">
+  <%- include("../partials/flash") %>
+  <div class="container">
+      
+    <div class="row mb-5 ">
+      <h3>Latest Posts</h3>
+      <% const len = blogposts.length-4; %> 
+      <% const lastThree = blogposts.slice(len); %> 
+      <% for(let post of lastThree) {%>
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="card" style="width: 18rem;padding: 15px;">
+            <strong class="d-inline-block mb-2 text-primary"><%= post.subject %></strong>
+            <img src="<%=post.image %> " class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><a href="/blog/<%= post._id %>" style="text-decoration: none;"><%= post.title  %></a></h5>
+              <p class="card-text"><%= post.description.substring(0,50)  %>..</p>
+            </div>
+            <p class="card-text"><small class="text-muted"><%= post.date %> </small></p>
+          </div>
+        </div>
+      <% } %>     
+    </div>
+
+        <!-- //Recent -->
+  
+      <div class="row">
+        <h3>Recent Posts</h3>
+        <% const firstThree = blogposts.slice(0,len); %> 
+        <% for(let post of firstThree) {%>     
+         <div class="col-lg-6 col-md-6 col-sm-12">
+           <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-static bg-white">
+             <div class="col p-4 d-flex flex-column position-static">
+               <strong class="d-inline-block mb-2 text-primary"><%= post.subject %></strong>
+               <h3 class="mb-0"><%= post.title %> </h3>
+               <div class="mb-1 text-muted"><%= post.date %></div>
+               <p class="card-text mb-auto"><%= post.description.substring(0,50) %>..</p>
+               <a href="/blog/<%= post._id %> ">Continue reading</a>
+             </div>
+             <div class="col-auto d-none d-lg-block" style="padding:10px;"> 
+                 <img src="<%= post.image %>" width="200" height="250" >
+             </div>
+           </div>
+         </div>
+            
+        <% } %>   
+      </div>    
+
+  </div>
+
+</main>
+
+          
+
+
+<%-include("../partials/footer") %> 
